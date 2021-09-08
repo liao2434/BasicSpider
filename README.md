@@ -317,7 +317,7 @@ https://blog.csdn.net/qq_44695727/article/details/107334574
 
 注：html中，id属性取值唯一，也就是说id能唯一确定一个标签(假如该标签有这个属性)
 
-![html](/images/pic3.PNG)
+![html](/images/pic4.PNG)
 
 关于html的详细教程，可以参考https://www.w3school.com.cn/html/index.asp
 
