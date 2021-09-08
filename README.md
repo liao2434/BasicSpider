@@ -117,7 +117,7 @@ except Exception as e:
     print (e)
 ```
 程序运行界面如下，selenium会打开一个新的浏览器窗口
-![selenium界面](/images/1.png)
+![selenium界面](/images/pic1.png)
 ### 4.3 selenium基础语句
 
 #### 4.3.1 搜索元素
@@ -308,7 +308,7 @@ https://blog.csdn.net/qq_44695727/article/details/107334574
 ### 6.1 查看网页源代码
 在浏览器中，随便打开一个网页，点击右键，会看见"检查"选项。点击这一项，即可查看网页源代码。假如把鼠标移动到网页的某个元素上，再选择检查，可以方便地查看到该元素在html中的位置。下图查看的是"百度一下"按钮。
 
-![检查](/images/2.PNG)
+![检查](/images/pic2.PNG)
 
 ### 6.2 很简略的html语法
 在html中，尖括号<>叫做标签。标签可以成对出现，如head(标题，样式等)，body(主体内容)等，也可以单个出现，如input(输入控件)，img(图片)等。标签之间可以嵌套，一对标签之中可以夹着任意对标签，这构成了html的层级关系。如下图中，input就是span的子节点。
@@ -317,7 +317,7 @@ https://blog.csdn.net/qq_44695727/article/details/107334574
 
 注：html中，id属性取值唯一，也就是说id能唯一确定一个标签(假如该标签有这个属性)
 
-![html](/images/3.PNG)
+![html](/images/pic3.PNG)
 
 关于html的详细教程，可以参考https://www.w3school.com.cn/html/index.asp
 
