@@ -7,9 +7,9 @@
 爬虫的难点有二：1.大规模，高效率爬取 2.对动态网页或反爬机制进行针对。
 
 ### 1.2 爬虫的工具包(python)
-爬取库:requests(基础)，selenium(操作较复杂，因为模拟浏览器，具有强大的反爬和动态处理能力)
+爬取库：requests(基础)，selenium(操作较复杂，因为模拟浏览器，具有强大的反爬和动态处理能力)
 
-解析库:lxml(xpath)，re(正则表达式)，bs4(对xpath的封装改造，搜索功能较全面，但是不直接支持xpath)。 re可以对任何文本进行处理，lxml和bs4只能处理html和xml，但可以展示出网页的层级结构。
+解析库：lxml(xpath)，re(正则表达式)，bs4(对xpath的封装改造，搜索功能较全面，但是不直接支持xpath)。 re可以对任何文本进行处理，lxml和bs4只能处理html和xml，但可以展示出网页的层级结构。
 
 框架：scrapy，它同时集合了爬取和解析的功能，可以用于开发大型爬虫
 
@@ -63,9 +63,9 @@ print(download_list)
 ```
 另外，网页也可被保存为html格式，根据爬取库和解析库来选择保存为txt还是html。下文介绍selenium+lxml的组合，使用html保存。
 
-注1:对于初学者来说，如果没有反爬或复杂需求，可以不学习selenium。 使用requests+lxml/re/bs4或单独使用scrapy已能完成基础需求。
+注1：对于初学者来说，如果没有反爬或复杂需求，可以不学习selenium。 使用requests+lxml/re/bs4或单独使用scrapy已能完成基础需求。
 
-注2:如何看懂html是爬虫的难点，在第6点会对此进行介绍。
+注2：如何看懂html是爬虫的难点，在第6点会对此进行介绍。
 
 ## 4.selenium入门
 selenium通过创建模拟浏览器的方式进行爬取，不但可以实现登录等动态操作，而且可以规避跳转反爬。
@@ -73,7 +73,7 @@ selenium通过创建模拟浏览器的方式进行爬取，不但可以实现登
 跳转反爬：通过识别跳转行为来判断访问是否正常。requests和selenium的get方法都相当于地址栏跳转，而常规用户会从网站门页不断向里深入，selenium可以很方便地模仿这一行为。
 
 ### 4.1 安装selenium
-参见教程:https://www.cnblogs.com/lfri/p/10542797.html
+参见教程：https://www.cnblogs.com/lfri/p/10542797.html
 ,https://www.cnblogs.com/shaosks/p/14857640.html
 
 太长不看版：
@@ -82,7 +82,7 @@ selenium通过创建模拟浏览器的方式进行爬取，不但可以实现登
 
 2.假如不想配置环境变量，需要将驱动同时安装到浏览器目录和python目录下
 
-### 4.2 简单实例:
+### 4.2 简单实例：
 在百度图片搜索"python"，下滑滚动条加载更多图片，并下载前十张图
 ```python
 from selenium import webdriver
@@ -117,14 +117,14 @@ except Exception as e:
     print (e)
 ```
 程序运行界面如下，selenium会打开一个新的浏览器窗口
-![selenium界面](img_url)
+![selenium界面](/images/1.png)
 ### 4.3 selenium基础语句
 
 #### 4.3.1 搜索元素
 
 find_element_by_id
 
-注意:在html中，为避免与js语法冲突，id唯一，因此优先考虑使用id查找元素
+注意：在html中，为避免与js语法冲突，id唯一，因此优先考虑使用id查找元素
 
 find_element_by_xpath
 
@@ -196,15 +196,15 @@ driver.switch_to.window(anchor)#返回保存的标签页
 #### 5.2.1 常见反爬机制
 前文已经介绍过一些，现在做一个总结
 
-检测异常行为:如反复访问，地址栏跳转到网站深处，频繁访问等。可通过构建代理ip池以及优化爬取逻辑等规避
+检测异常行为：如反复访问，地址栏跳转到网站深处，频繁访问等。可通过构建代理ip池以及优化爬取逻辑等规避
 
-加密网站信息:一种加密方法是，将一些字符串转为图片，这些图片在html中会变为乱码。碰到这些，需要具体问题具体分析
+加密网站信息：一种加密方法是，将一些字符串转为图片，这些图片在html中会变为乱码。碰到这些，需要具体问题具体分析
 
-检测selenium:禁止selenium等自动控制软件访问，可通过设置以及js调整
+检测selenium：禁止selenium等自动控制软件访问，可通过设置以及js调整
 
-验证码:可通过设置程序自动解验证码或人工守在爬虫旁解决
+验证码：可通过设置程序自动解验证码或人工守在爬虫旁解决
 
-检测请求头:header中的Cookie、Referer、User-Agent都是检查点，在requests中需要专门设置，selenium一般不会遇到这个问题
+检测请求头：header中的Cookie、Referer、User-Agent都是检查点，在requests中需要专门设置，selenium一般不会遇到这个问题
 
 #### 5.2.2 selenium反爬
 通过调整浏览器选项，提供稳定运行环境并进行反爬。
@@ -280,7 +280,7 @@ except Exception as e:
 
 1.使用cookie避免输入验证码
 
-参见链接:https://blog.csdn.net/weixin_46457203/article/details/105857918
+参见链接：https://blog.csdn.net/weixin_46457203/article/details/105857918
 
 2.自动识别验证码
 
@@ -298,7 +298,7 @@ except Exception as e:
 
 在火狐 更多工具->面向开发者的拓展 一栏可以很方便下载，但是Chrome的插件似乎需要翻墙，难顶。
 
-参考链接:https://www.cnblogs.com/shuaijie/articles/4552012.html
+参考链接：https://www.cnblogs.com/shuaijie/articles/4552012.html
 
 ### 5.5 进阶教程
 这篇文章对selenium的介绍更全面详细，适合想要精益求精的大佬
@@ -308,7 +308,7 @@ https://blog.csdn.net/qq_44695727/article/details/107334574
 ### 6.1 查看网页源代码
 在浏览器中，随便打开一个网页，点击右键，会看见"检查"选项。点击这一项，即可查看网页源代码。假如把鼠标移动到网页的某个元素上，再选择检查，可以方便地查看到该元素在html中的位置。下图查看的是"百度一下"按钮。
 
-![检查](img_url)
+![检查](/images/2.PNG)
 
 ### 6.2 很简略的html语法
 在html中，尖括号<>叫做标签。标签可以成对出现，如head(标题，样式等)，body(主体内容)等，也可以单个出现，如input(输入控件)，img(图片)等。标签之间可以嵌套，一对标签之中可以夹着任意对标签，这构成了html的层级关系。如下图中，input就是span的子节点。
@@ -317,7 +317,7 @@ https://blog.csdn.net/qq_44695727/article/details/107334574
 
 注：html中，id属性取值唯一，也就是说id能唯一确定一个标签(假如该标签有这个属性)
 
-![html](img_url)
+![html](/images/3.PNG)
 
 关于html的详细教程，可以参考https://www.w3school.com.cn/html/index.asp
 
@@ -363,7 +363,7 @@ lxml是利用xpath查找元素的解析库。节点在lxml中被定义为Element
 
 关于element类的方法属性，参见官方文档：https://lxml.de/api/lxml.etree._Element-class.html
 
-以下是一个简单的例子，下图为需要处理的html，节选自大众点评目录页，我们尝试把"4.54"这个数字拿出来
+以下是一个简单的例子，以下为需要处理的html，节选自大众点评目录页，我们尝试把"4.54"这个数字拿出来
 ```
 <div class="nebula_star">
 <div class="star_icon">     
@@ -399,7 +399,7 @@ for s in scorenode:
 ### 7.总结
 爬虫是入门容易精通难的技术，在数据分析领域常常用到(当然，一般都是萌新负责的dirty work)。我才疏学浅，权当抛砖引玉，如有错误，还请多多指正。
 
-### 8.附:美团系列字体加密破解方法
+### 8.附：美团系列字体加密破解方法
 它有专门的字体包，用图片替换了部分文字，下载对应字体包即可。
 
-参见链接:https://www.icode9.com/content-4-803615.html
+参见链接：https://www.icode9.com/content-4-803615.html
